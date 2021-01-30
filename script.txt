@@ -1,0 +1,20 @@
+﻿CREATE TABLE customers (id SERIAL PRIMARY KEY,  name VARCHAR(30));
+INSERT INTO customers (name) VALUES ('Arisha Barron'), ('Branden Gibson'), ('Rhonda Church'), ('Georgina Hazel');
+
+
+CREATE TABLE bank (id SERIAL PRIMARY KEY,  name VARCHAR(50));
+INSERT INTO bank (name) VALUES ('ABC Bank');
+
+
+CREATE TABLE account_type (id SERIAL PRIMARY KEY,  name VARCHAR(30));
+INSERT INTO account_type (name) VALUES ('Savings'), ('Current');
+
+
+CREATE TABLE transaction_type (id SERIAL PRIMARY KEY,  name VARCHAR(20));
+INSERT INTO transaction_type (name) VALUES ('Credit'), ('Debit');
+
+
+CREATE TABLE bank_account (id SERIAL PRIMARY KEY, account_no VARCHAR(30), bank_id int, account_type_id int, customer_id int, balance bigint, created_time timestamp, updated_time timestamp, CONSTRAINT fk_bank FOREIGN KEY(bank_id) REFERENCES bank(id), CONSTRAINT fk_account_type FOREIGN KEY(account_type_id) REFERENCES account_type(id), CONSTRAINT fk_customer FOREIGN KEY(customer_id) REFERENCES customers(id));
+
+
+CREATE TABLE bank_transaction (id SERIAL PRIMARY KEY, bank_account_id int, transaction_type_id int, amount bigint, transaction_time timestamp, CONSTRAINT fk_bank_account_transaction FOREIGN KEY(bank_account_id) REFERENCES bank_account(id), CONSTRAINT fk_transaction_type FOREIGN KEY(transaction_type_id) REFERENCES transaction_type(id));
