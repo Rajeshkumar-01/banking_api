@@ -1,5 +1,7 @@
 # banking_api
 
+Node, Express & Postgres
+
 ## Get list of customers
 http://localhost:3000/customers
 
