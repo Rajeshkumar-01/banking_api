@@ -1,9 +1,9 @@
 # banking_api
 
-# Get list of customers
+## Get list of customers
 http://localhost:3000/customers
 
-# To create a new customer account
+## To create a new customer account
 http://localhost:3000/customer/new/bank/account
 {
     "bank": 1,
@@ -20,7 +20,7 @@ http://localhost:3000/customer/new/bank/account
     "customer_id": 2
 }
 
-# Creating customer account with different account type
+## Creating customer account with different account type
 http://localhost:3000/customer/new/bank/account
 {
     "bank": 1,
@@ -29,7 +29,7 @@ http://localhost:3000/customer/new/bank/account
     "customer_id": 2
 }
 
-# Make transaction one customer account to another customer account
+## Make transaction one customer account to another customer account
 http://localhost:3000/bank/transaction
 {
     "from_account": 21300110525961,
@@ -37,12 +37,12 @@ http://localhost:3000/bank/transaction
     "amount": 50
 }
 
-# To view customer accounts
+## To view customer accounts
 http://localhost:3000/customer/accounts/2
 
-# To check account balance for the particular account
+## To check account balance for the particular account
 http://localhost:3000/account/balance/21300110525961
 
-# To list the account transactions
+## To list the account transactions
 http://localhost:3000/account/transactions/21300110540227
 
